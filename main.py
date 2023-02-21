@@ -21,10 +21,15 @@ class Game:
                        pass
                 if event.type == pygame.QUIT:
                     run = False
-        pygame.display.update()
+            pygame.display.update()
 
 
 
 if __name__ == '__main__':
     game = Game()
+    pass
+
+
+
+def branch_develop():
     pass
