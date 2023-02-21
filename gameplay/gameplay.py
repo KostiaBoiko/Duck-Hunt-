@@ -5,9 +5,15 @@ class Gameplay:
     def game(self):
         gameplay = True
         run = True
+        is_game_pause = True
+        drawer = Drawer()
         if gameplay:
-            Drawer.drawbg(self)
             while run:
+                if drawer.draw_start_menu() == False:
+                    if drawer.draw_menu(is_game_pause) == False:
+                        is_game_pause = False
+                        print('sun of wqweqweqw')
+
                 for event in pygame.event.get():
                     if event.type == pygame.KEYDOWN:
                         if event.type == pygame.K_ESCAPE:
