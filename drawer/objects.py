@@ -14,9 +14,17 @@ class Objects:
         self.background = pygame.image.load("assets/game/game_back.png").convert_alpha()
 
     def bg(self):
-        #background = pygame.image.load("assets/game/game_back.png").convert_alpha()
         self.screen.blit(self.background, (0, 0))
 
     def add_enemies_to_list(self):
         self.enemy_list_in_game.append(self.plane_1.get_rect(topleft=(300, 200)))
         self.screen.blit(self.plane_1, (200, 200))
+
+    def enemy_movement(self):
+        if self.enemy_list_in_game:
+            for (i, el) in enumerate(self.enemy_list_in_game):
+                self.screen.blit(self.plane_1, el)
+                el.x -= 10
+
+                if el.x < -10:
+                    self.enemy_list_in_game.pop(i)
