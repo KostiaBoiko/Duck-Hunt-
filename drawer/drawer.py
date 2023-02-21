@@ -2,7 +2,7 @@ import pygame
 clock = pygame.time.Clock()
 class Drawer:
 
-    def bg(self):
+    def __init__(self):
         SCREEN_WIDTH = 720
         SCREEN_HEIGHT = 480
 
