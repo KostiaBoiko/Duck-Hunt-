@@ -1,20 +1,18 @@
 import pygame
 from drawer.drawer import Drawer
+from drawer.objects import Objects
 class Gameplay:
 
     def game(self):
         gameplay = True
-        run = True
-        if gameplay:
-            Drawer.drawbg(self)
-            while run:
-                for event in pygame.event.get():
-                    if event.type == pygame.KEYDOWN:
-                        if event.type == pygame.K_ESCAPE:
-                            pass
-                    if event.type == pygame.QUIT:
-                        run = False
-                pygame.display.update()
+        running = True
+        enemy = Objects()
+        enemy.bg()
+        enemy.add_enemies_to_list()
+        while running:
+            if gameplay:
+                pass
+            pygame.display.update()
 
     def actions(x):
         pass
